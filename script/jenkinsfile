@@ -19,7 +19,7 @@ pipeline{
         }
         stage('plan'){
             steps{
-                sh 'terraform plan -var ENVIRONMENT=$ENVIRONMENT -var INSTANCE_TYPE=$INSTANCE_TYPE -VAR REGION=$REGION -lock=false '
+                sh 'terraform plan -chdir flag -lock=false -no-color '
             }
         }
     }
